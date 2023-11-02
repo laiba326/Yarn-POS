@@ -1,5 +1,9 @@
-import React from "react"
-
+import React from "react";
+import SideBar from "./components/SideBar";
 export default function App() {
-  return <div>App</div>
+  return (
+    <>
+      <SideBar />
+    </>
+  );
 }

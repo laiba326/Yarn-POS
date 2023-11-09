@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Form, Input, Select } from "antd";
+import { Button, Form, Input } from "antd";
 import styled from "styled-components";
 
 const StyledForm = styled(Form)`
@@ -9,16 +9,13 @@ const StyledForm = styled(Form)`
   padding: 20px;
   margin-bottom: 800px;
   box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.4);
+  color: blue;
+`;
+const CustomLabel = styled.label`
+  color: blue;
 `;
 
 const PartyForm = () => {
-  const prefixSelector = (
-    <Form.Item name="prefix" noStyle>
-      <Select style={{ width: 50 }}>
-        <Select.Option value="92">+92</Select.Option>
-      </Select>
-    </Form.Item>
-  );
   const onFinish = (values) => {
     console.log(values);
   };
@@ -32,36 +29,28 @@ const PartyForm = () => {
       onFinish={onFinish}
     >
       <h1>Party Form</h1>
-      <Form.Item label="Party Name" name="Party Name">
+      <Form.Item label={<CustomLabel>Party Name</CustomLabel>} name="partyname">
         <Input />
       </Form.Item>
 
-      <Form.Item label="Address" name="Address">
+      <Form.Item label={<CustomLabel>Address</CustomLabel>} name="address">
         <Input />
       </Form.Item>
 
-      <Form.Item
-        name="phone"
-        label="Phone Number"
-        rules={[{ required: true, message: "Please input your phone number!" }]}
-      >
-        <Input addonBefore={prefixSelector} style={{ width: "100%" }} />
-      </Form.Item>
-
-      <Form.Item label="Phone1" name="Phone1">
+      <Form.Item label={<CustomLabel>phone1</CustomLabel>} name="phone1">
         <input />
       </Form.Item>
 
-      <Form.Item label="Phone2" name="Phone2">
+      <Form.Item label={<CustomLabel>phone2</CustomLabel>} name="phone2">
         <input />
       </Form.Item>
 
-      <Form.Item label="Phone3" name="Phone3">
+      <Form.Item label={<CustomLabel>phone3</CustomLabel>} name="phone3">
         <input />
       </Form.Item>
-      <Form.Item label="Button">
+      <Form.Item>
         <Button type="primary" htmlType="submit">
-          Get Started
+          submit
         </Button>
       </Form.Item>
     </StyledForm>

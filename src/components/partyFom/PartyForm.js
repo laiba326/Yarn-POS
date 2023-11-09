@@ -1,54 +1,60 @@
-import React, { useState } from "react";
-import { Option } from "antd/es/mentions";
-import { Button, Form, Input, Radio, Select } from "antd";
+import React from "react";
+import { Button, Form, Input } from "antd";
+import styled from "styled-components";
 
-const ReactFc = () => {
-  const [componentSize, setComponentSize] = useState("default");
-  const prefixSelector = (
-    <Form.Item name="prefix" noStyle>
-      <Select style={{ width: 70 }}>
-        <Option value="86">+86</Option>
-        <Option value="87">+87</Option>
-      </Select>
-    </Form.Item>
-  );
+const StyledForm = styled(Form)`
+  max-width: 600px;
+  margin: auto;
+  background-color: #f0f0f0;
+  padding: 20px;
+  margin-bottom: 800px;
+  box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.4);
+  color: blue;
+`;
+const CustomLabel = styled.label`
+  color: blue;
+`;
+
+const PartyForm = () => {
+  const onFinish = (values) => {
+    console.log(values);
+  };
+
   return (
-    <Form
+    <StyledForm
       labelCol={{ span: 4 }}
       wrapperCol={{ span: 14 }}
       layout="horizontal"
-      initialValues={{ size: componentSize }}
       style={{ maxWidth: 600 }}
+      onFinish={onFinish}
     >
       <h1>Party Form</h1>
-      <Form.Item label="address">
+      <Form.Item label={<CustomLabel>Party Name</CustomLabel>} name="partyname">
         <Input />
       </Form.Item>
 
-      <Form.Item
-        name="phone"
-        label="Phone Number"
-        rules={[{ required: true, message: "Please input your phone number!" }]}
-      >
-        <Input addonBefore={prefixSelector} style={{ width: "100%" }} />
+      <Form.Item label={<CustomLabel>Address</CustomLabel>} name="address">
+        <Input />
       </Form.Item>
 
-      <Form.Item label="phone1">
+      <Form.Item label={<CustomLabel>phone1</CustomLabel>} name="phone1">
         <input />
       </Form.Item>
 
-      <Form.Item label="phone2">
+      <Form.Item label={<CustomLabel>phone2</CustomLabel>} name="phone2">
         <input />
       </Form.Item>
 
-      <Form.Item label="phone3">
+      <Form.Item label={<CustomLabel>phone3</CustomLabel>} name="phone3">
         <input />
       </Form.Item>
-      <Form.Item label="Button">
-        <Button>Get Started</Button>
+      <Form.Item>
+        <Button type="primary" htmlType="submit">
+          submit
+        </Button>
       </Form.Item>
-    </Form>
+    </StyledForm>
   );
 };
 
-export default ReactFc;
+export default PartyForm;

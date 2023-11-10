@@ -1,3 +1,4 @@
+import React from "react";
 import App from "../App";
 import Dashboard from "../pages/Dashboard";
 import Reports from "../pages/Reports";

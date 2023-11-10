@@ -1,15 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit";
-export const Slice = createSlice({
-  name: "",
+const partySlice = createSlice({
+  name: "party",
   initialState: {
-    xyz: null,
+    parties: null,
   },
   reducers: {
-    addProperty: (state, action) => {
-      state.xyz = action.payload;
+    addParties: (state, action) => {
+      state.parties = action.payload;
     },
   },
 });
 
-export const { addProperty } = Slice.actions;
-export default Slice.reducer;
+export const { addParties } = partySlice.actions;
+export default partySlice.reducer;

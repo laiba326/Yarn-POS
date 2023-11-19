@@ -12,7 +12,6 @@ const StyledCard = styled(Card)`
 const DashboardIcon = ({ title, component, icon }) => (
   <StyledCard title={title}>
     <Avatar size={100} icon={icon} />
-    );
   </StyledCard>
 );
 

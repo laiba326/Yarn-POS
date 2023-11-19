@@ -1,16 +1,17 @@
 import React from "react";
-import "./App.css";
+
 import { Layout, Space } from "antd";
 import SideMenu from "./components/layout/SideBar";
-
+import SideBar from "./components/SideBar";
 import RouteComp from "./router/routeComp";
-
+import NewPartyForm from "./components/partyform/NewPartyForm";
 import {
   footerStyle,
   siderStyle,
   contentStyle,
   headerStyle,
 } from "./components/layout/layoutStyles";
+
 const { Header, Footer, Sider, Content } = Layout;
 
 //sale
@@ -44,6 +45,8 @@ function App() {
         backgroundColor: "rgb(37, 41, 60)",
       }}
     >
+      <SideBar />
+      <NewPartyForm />
       <Space
         direction="vertical"
         style={{
@@ -68,5 +71,4 @@ function App() {
     </div>
   );
 }
-
 export default App;

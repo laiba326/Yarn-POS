@@ -1,4 +1,5 @@
 import React from "react";
+<<<<<<< HEAD
 import "./App.css";
 import { Layout, Space } from "antd";
 import SideMenu from "./components/layout/SideBar";
@@ -66,6 +67,17 @@ function App() {
         </Layout>
       </Space>
     </div>
+=======
+import SideBar from "./components/SideBar";
+import PartyForm from "./components/partyFom/PartyForm";
+
+export default function App() {
+  return (
+    <>
+      <SideBar />
+      <PartyForm />
+    </>
+>>>>>>> feature-add-part-form
   );
 }
 

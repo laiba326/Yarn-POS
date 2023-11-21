@@ -22,7 +22,6 @@ root.render(
         <App />
       </BrowserRouter>
     </Provider>
-    <RouterProvider router={router} />
   </React.StrictMode>
 );
 

@@ -9,10 +9,12 @@ const StyledCard = styled(Card)`
   background-color: blue;
 `;
 
-const DashboardIcon = ({ title, component, icon }) => (
-  <StyledCard title={title}>
-    <Avatar size={100} icon={icon} />
-  </StyledCard>
+const DashboardIcon = ({ title, component, icon, onClick }) => (
+  <div onClick={onClick}>
+    <StyledCard title={title}>
+      <Avatar size={100} icon={icon} />
+    </StyledCard>
+  </div>
 );
 
 export default DashboardIcon;

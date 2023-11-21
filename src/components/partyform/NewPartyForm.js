@@ -25,7 +25,7 @@ const NewPartyForm = () => {
           width: 500,
           backgroundColor: "lightblue",
           float: "left",
-          marginLeft: "300px",
+          marginLeft: "60px",
           padding: "16px",
         }}
       >

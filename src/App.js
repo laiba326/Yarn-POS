@@ -45,8 +45,6 @@ function App() {
         backgroundColor: "rgb(37, 41, 60)",
       }}
     >
-      <SideBar />
-      <NewPartyForm />
       <Space
         direction="vertical"
         style={{

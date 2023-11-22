@@ -2,17 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
-import {
-  createBrowserRouter,
-  RouterProvider,
-  BrowserRouter,
-} from "react-router-dom";
+import { createBrowserRouter, BrowserRouter } from "react-router-dom";
 import { routes } from "./router/routes";
 import store from "./redux/store/store";
 import App from "./App";
 import { Provider } from "react-redux";
-
-const router = createBrowserRouter(routes);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

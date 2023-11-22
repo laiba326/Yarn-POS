@@ -3,9 +3,9 @@ import { Modal } from "antd";
 
 export default function FormModal({
   isModalOpen,
-  setIsModalOpen,
   title,
   content,
+  setIsModalOpen,
 }) {
   const handleOk = () => {
     setIsModalOpen(false);

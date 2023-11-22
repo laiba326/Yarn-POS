@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { Card, Avatar } from "antd";
 import styled from "styled-components";
+import FormModal from "../formModal/FormModal";
 
 const StyledCard = styled(Card)`
   width: 300px;
@@ -9,12 +10,25 @@ const StyledCard = styled(Card)`
   background-color: blue;
 `;
 
-const DashboardIcon = ({ title, component, icon, onClick }) => (
-  <div onClick={onClick}>
-    <StyledCard title={title}>
-      <Avatar size={100} icon={icon} />
-    </StyledCard>
-  </div>
-);
+const DashboardIcon = ({ title, component, icon, onClick, comp }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
+  const handleModal = () => {
+    setIsModalOpen(!isModalOpen);
+  };
+
+  return (
+    <>
+      <StyledCard onClick={handleModal} title={title}>
+        <Avatar size={100} icon={icon} />
+      </StyledCard>
+      <FormModal
+        title={title}
+        isModalOpen={isModalOpen}
+        content={comp}
+        setIsModalOpen={setIsModalOpen}
+      />
+    </>
+  );
+};
 export default DashboardIcon;

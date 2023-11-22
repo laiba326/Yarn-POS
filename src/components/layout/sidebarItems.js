@@ -1,9 +1,9 @@
+import React from "react";
 import {
   HomeOutlined,
   DashboardOutlined,
   FileDoneOutlined,
 } from "@ant-design/icons";
-import React from "react";
 
 export const sidebarItems = [
   { label: "Dashboard", key: "/", icon: <HomeOutlined /> },

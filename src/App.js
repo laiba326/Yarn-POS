@@ -1,10 +1,7 @@
 import React from "react";
-
 import { Layout, Space } from "antd";
 import SideMenu from "./components/layout/SideBar";
-import SideBar from "./components/SideBar";
 import RouteComp from "./router/routeComp";
-import NewPartyForm from "./components/partyform/NewPartyForm";
 import {
   footerStyle,
   siderStyle,
@@ -39,34 +36,36 @@ const { Header, Footer, Sider, Content } = Layout;
 //thermal printing
 function App() {
   return (
-    <div
-      style={{
-        width: "100%",
-        backgroundColor: "rgb(37, 41, 60)",
-      }}
-    >
-      <Space
-        direction="vertical"
+    <>
+      <div
         style={{
           width: "100%",
           backgroundColor: "rgb(37, 41, 60)",
         }}
-        size={[0, 48]}
       >
-        <Layout>
-          <Sider style={siderStyle}>
-            <SideMenu />
-          </Sider>
+        <Space
+          direction="vertical"
+          style={{
+            width: "100%",
+            backgroundColor: "rgb(37, 41, 60)",
+          }}
+          size={[0, 48]}
+        >
           <Layout>
-            <Header style={headerStyle}>Header</Header>
-            <Content style={contentStyle}>
-              <RouteComp />
-            </Content>
-            <Footer style={footerStyle}>Footer</Footer>
+            <Sider style={siderStyle}>
+              <SideMenu />
+            </Sider>
+            <Layout>
+              <Header style={headerStyle}>Header</Header>
+              <Content style={contentStyle}>
+                <RouteComp />
+              </Content>
+              <Footer style={footerStyle}>Footer</Footer>
+            </Layout>
           </Layout>
-        </Layout>
-      </Space>
-    </div>
+        </Space>
+      </div>
+    </>
   );
 }
 export default App;

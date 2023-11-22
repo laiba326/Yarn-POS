@@ -1,8 +1,6 @@
 import React from "react";
 import { Layout, Space } from "antd";
 import SideMenu from "./components/layout/SideBar";
-import SideBar from "./components/layout/SideBar";
-import PartyForm from "./components/partyFom/PartyForm";
 
 import RouteComp from "./router/routeComp";
 
@@ -40,9 +38,6 @@ const { Header, Footer, Sider, Content } = Layout;
 function App() {
   return (
     <>
-      <SideBar />
-      <PartyForm />
-
       <div
         style={{
           width: "100%",

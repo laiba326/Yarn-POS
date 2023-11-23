@@ -7,10 +7,10 @@ const StyledCard = styled(Card)`
   width: 300px;
   height: 200px;
   text-align: center;
-  background-color: blue;
+  background-color: #82a2ac;
 `;
 
-const DashboardIcon = ({ title, component, icon, onClick, comp }) => {
+const DashboardIcon = ({ title, icon, comp }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleModal = () => {

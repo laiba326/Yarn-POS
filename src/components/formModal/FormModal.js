@@ -15,6 +15,7 @@ export default function FormModal({ isModalOpen, content, setIsModalOpen }) {
         open={isModalOpen}
         onOk={handleOk}
         onCancel={handleCancel}
+        footer={null}
         width={750}
       >
         {content}

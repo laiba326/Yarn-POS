@@ -6,6 +6,7 @@ import FormModal from "../formModal/FormModal";
 const StyledCard = styled(Card)`
   width: 300px;
   height: 200px;
+  margin-right: 20px;
   text-align: center;
   background-color: #82a2ac;
 `;

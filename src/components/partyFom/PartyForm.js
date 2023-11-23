@@ -7,12 +7,11 @@ const StyledForm = styled(Form)`
   margin: auto;
   background-color: #f0f0f0;
   padding: 20px;
-  margin-bottom: 800px;
-  box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.4);
-  color: blue;
+  color: black;
+  border: solid;
 `;
 const CustomLabel = styled.label`
-  color: blue;
+  color: black;
 `;
 
 const PartyForm = () => {

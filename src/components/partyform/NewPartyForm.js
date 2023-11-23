@@ -20,19 +20,20 @@ const NewPartyForm = () => {
   return (
     <Space direction="vertical" size={16}>
       <Card
-        title="Party card"
         style={{
-          width: 500,
-          backgroundColor: "lightblue",
+          width: 600,
+          margin: "auto",
+          backgroundColor: " #f0f0f0",
           float: "left",
           marginLeft: "60px",
-          padding: "16px",
+          padding: "20px",
+          border: "solid",
         }}
       >
         <Form
           name="basic"
           labelCol={{
-            span: 8,
+            span: 6,
           }}
           wrapperCol={{
             span: 16,
@@ -47,6 +48,7 @@ const NewPartyForm = () => {
           onFinishFailed={onFinishFailed}
           autoComplete="off"
         >
+          <h1>Payment Form</h1>
           <Form.Item label="DatePicker" name="datePicker">
             <DatePicker />
           </Form.Item>

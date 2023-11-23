@@ -8,6 +8,7 @@ import {
   contentStyle,
   headerStyle,
 } from "./components/layout/layoutStyles";
+import sale from "./components/addSale/Sale";
 
 const { Header, Footer, Sider, Content } = Layout;
 
@@ -65,6 +66,7 @@ function App() {
           </Layout>
         </Space>
       </div>
+      <sale />
     </>
   );
 }

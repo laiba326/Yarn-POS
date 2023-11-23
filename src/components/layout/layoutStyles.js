@@ -10,17 +10,13 @@ export const headerStyle = {
   boxShadow: "rgba(15, 20, 34, 0.14) 0px 2px 6px 0px",
   padding: "0rem 1.5rem",
   minHeight: "64px",
-  // border-radius: ;
 };
 export const contentStyle = {
   borderRadius: 10,
   padding: "1.5rem 1.5rem 1.5rem 1.5rem",
 
   boxShadow: "rgba(15, 20, 34, 0.14) 0px 2px 6px 0px",
-
-  // textAlign: "center",
   minHeight: 800,
-  // lineHeight: "120px",
   color: "#fff",
   backgroundColor: "rgb(37, 41, 60)",
 };

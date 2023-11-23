@@ -1,12 +1,7 @@
 import React from "react";
 import { Modal } from "antd";
 
-export default function FormModal({
-  isModalOpen,
-  title,
-  content,
-  setIsModalOpen,
-}) {
+export default function FormModal({ isModalOpen, content, setIsModalOpen }) {
   const handleOk = () => {
     setIsModalOpen(false);
   };
@@ -17,7 +12,6 @@ export default function FormModal({
   return (
     <>
       <Modal
-        // title={title}
         open={isModalOpen}
         onOk={handleOk}
         onCancel={handleCancel}

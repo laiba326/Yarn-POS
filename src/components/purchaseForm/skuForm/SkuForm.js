@@ -1,5 +1,5 @@
 import React from "react";
-import { DatePicker, Button, Form, Input } from "antd";
+import { Button, Form, Input, Select } from "antd";
 import styled from "styled-components";
 
 const StyledForm = styled(Form)`
@@ -13,8 +13,11 @@ const StyledForm = styled(Form)`
 const CustomLabel = styled.label`
   color: black;
 `;
-
-const purchaseForm = () => {
+const { Option } = Select;
+const onChange = (values) => {
+  console.log(values);
+};
+const SkuForm = () => {
   const onFinish = (values) => {
     console.log(values);
   };
@@ -26,26 +29,18 @@ const purchaseForm = () => {
       layout="horizontal"
       style={{ maxWidth: 600 }}
       onFinish={onFinish}
+      onChange={onChange}
     >
-      <h1>Purchase Form</h1>
-      <Form.Item label="DatePicker" name="datePicker">
-        <DatePicker />
+      <h1>Sku Form</h1>
+      <Form.Item label={<CustomLabel>Sku Name</CustomLabel>} name="skuname">
+        <Input placeholder="Enter Sku Name" />
       </Form.Item>
-      <Form.Item
-        label={<CustomLabel>Product name</CustomLabel>}
-        name="product name"
-      >
-        <Input placeholder="Enter Product Name" />
-      </Form.Item>
-
-      <Form.Item label={<CustomLabel>Quantity</CustomLabel>} name="quantity">
-        <Input placeholder="Enter Quantity" />
-      </Form.Item>
-      <Form.Item label={<CustomLabel>Price</CustomLabel>} name="price">
-        <Input placeholder="Enter Price" />
-      </Form.Item>
-      <Form.Item label={<CustomLabel>Total</CustomLabel>} name="total">
-        <Input placeholder="Enter Total" />
+      <Form.Item label={<CustomLabel>Sku Color</CustomLabel>} name="skucolor">
+        <Select>
+          <Option value="Green">green</Option>
+          <Option value="Red">red</Option>
+          <Option value="yellow">yellow</Option>
+        </Select>
       </Form.Item>
       <Form
         style={{
@@ -62,4 +57,4 @@ const purchaseForm = () => {
   );
 };
 
-export default purchaseForm;
+export default SkuForm;

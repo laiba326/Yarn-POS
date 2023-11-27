@@ -29,29 +29,35 @@ const PartyForm = () => {
     >
       <h1>Party Form</h1>
       <Form.Item label={<CustomLabel>Party Name</CustomLabel>} name="partyname">
-        <Input />
+        <Input placeholder="Enter Party Name" />
       </Form.Item>
 
       <Form.Item label={<CustomLabel>Address</CustomLabel>} name="address">
-        <Input />
+        <Input placeholder=" Enter Address" />
       </Form.Item>
 
       <Form.Item label={<CustomLabel>phone1</CustomLabel>} name="phone1">
-        <input />
+        <input placeholder=" Enter Phone1" />
       </Form.Item>
 
       <Form.Item label={<CustomLabel>phone2</CustomLabel>} name="phone2">
-        <input />
+        <input placeholder=" Enter Phone2" />
       </Form.Item>
 
       <Form.Item label={<CustomLabel>phone3</CustomLabel>} name="phone3">
-        <input />
+        <input placeholder="Enter Phone3" />
       </Form.Item>
-      <Form.Item>
-        <Button type="primary" htmlType="submit">
-          submit
-        </Button>
-      </Form.Item>
+      <Form
+        style={{
+          marginLeft: "100px",
+        }}
+      >
+        <Form.Item>
+          <Button type="primary" htmlType="submit">
+            submit
+          </Button>
+        </Form.Item>
+      </Form>
     </StyledForm>
   );
 };

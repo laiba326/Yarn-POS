@@ -13,14 +13,21 @@ const StyledForm = styled(Form)`
 const CustomLabel = styled.label`
   color: black;
 `;
-const { Option } = Select;
-const onChange = (values) => {
-  console.log(values);
-};
+
 const SkuForm = () => {
   const onFinish = (values) => {
     console.log(values);
   };
+
+  const onChange = (values) => {
+    console.log(values);
+  };
+
+  const selectOptions = [
+    { label: "red", value: "red" },
+    { label: "red", value: "red" },
+    { label: "red", value: "red" },
+  ];
 
   return (
     <StyledForm
@@ -28,31 +35,26 @@ const SkuForm = () => {
       wrapperCol={{ span: 14 }}
       layout="horizontal"
       style={{ maxWidth: 600 }}
-      onFinish={onFinish}
-      onChange={onChange}
+      onFinish={onChange}
+      // onChange={onChange}
     >
       <h1>Sku Form</h1>
       <Form.Item label={<CustomLabel>Sku Name</CustomLabel>} name="skuname">
         <Input placeholder="Enter Sku Name" />
       </Form.Item>
       <Form.Item label={<CustomLabel>Sku Color</CustomLabel>} name="skucolor">
-        <Select>
-          <Option value="Green">green</Option>
-          <Option value="Red">red</Option>
-          <Option value="yellow">yellow</Option>
-        </Select>
+        <Select options={selectOptions} />
       </Form.Item>
-      <Form
+
+      <Form.Item
         style={{
           marginLeft: "170px",
         }}
       >
-        <Form.Item>
-          <Button type="primary" htmlType="submit">
-            submit
-          </Button>
-        </Form.Item>
-      </Form>
+        <Button type="primary" htmlType="submit">
+          Submit
+        </Button>
+      </Form.Item>
     </StyledForm>
   );
 };

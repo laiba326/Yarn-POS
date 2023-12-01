@@ -14,15 +14,17 @@ const Sale = () => {
   return (
     <Space direction="vertical" size={16}>
       <Card
-        title="Party card"
+        // title="Party card"
         style={{
           width: 500,
-          backgroundColor: "lightblue",
+          backgroundColor: "#f0f0f0",
           float: "left",
           marginLeft: "60px",
           padding: "16px",
+          border: "solid",
         }}
       >
+        <h1>Add Sales</h1>
         <Form
           name="basic"
           labelCol={{
@@ -45,7 +47,7 @@ const Sale = () => {
             <DatePicker />
           </Form.Item>
           <Form.Item label="Party Name">
-            <Select>
+            <Select placeholder="Select Party Name">
               <Option value="Party 1">Party 1</Option>
               <Option value="Party 2">Party 2</Option>
               <Option value="Party 3">Party 3</Option>
@@ -53,7 +55,7 @@ const Sale = () => {
           </Form.Item>
 
           <Form.Item label="SKU">
-            <Select>
+            <Select placeholder="Select SKU">
               <Option value="1"> 1</Option>
               <Option value="2"> 2</Option>
               <Option value="3"> 3</Option>
@@ -83,17 +85,23 @@ const Sale = () => {
             </Form.Item>
           )} */}
           <Form.Item label="Quantity in Bags" name="Quantity in Bags">
-            <Input />
+            <Input placeholder="Enter Quantity" />
           </Form.Item>
           <Form.Item label="Price" name="Price">
-            <Input type="text" />
+            <Input type="text" placeholder="Enter Price" />
           </Form.Item>
 
           <Form.Item label="Payment" name="Payment">
-            <Input type="text" />
+            <Input type="text" placeholder="Enter Payment" />
           </Form.Item>
-          <Form.Item>
-            <Button htmlType="submit">Submit</Button>
+          <Form.Item
+            style={{
+              marginLeft: "150px",
+            }}
+          >
+            <Button type="primary" htmlType="submit">
+              Submit
+            </Button>
           </Form.Item>
         </Form>
       </Card>

@@ -24,7 +24,7 @@ const NewPartyForm = () => {
           width: 600,
           margin: "auto",
           backgroundColor: " #f0f0f0",
-          float: "left",
+          // float: "left",
           marginLeft: "60px",
           padding: "20px",
           border: "solid",
@@ -53,14 +53,17 @@ const NewPartyForm = () => {
             <DatePicker />
           </Form.Item>
           <Form.Item label="Party-ID">
-            <Select>
+            <Select placeholder="Select Party-ID">
               <Option value="Party-ID 1">Party-ID 1</Option>
               <Option value="Party-ID 2">Party-ID 2</Option>
               <Option value="Party-ID 3">Party-ID 3</Option>
             </Select>
           </Form.Item>
           <Form.Item label="Payment Type" name="paymentType">
-            <Select onChange={handlePaymentTypeChange}>
+            <Select
+              onChange={handlePaymentTypeChange}
+              placeholder="Select Payment Type"
+            >
               <Option value="Cheque">Cheque</Option>
               <Option value="Cash">Cash</Option>
               <Option value="TC">TC</Option>
@@ -69,31 +72,37 @@ const NewPartyForm = () => {
           </Form.Item>
           {paymentType === "Cheque" && (
             <Form.Item label="Cheque No" name="chequeNo">
-              <Input />
+              <Input placeholder="Enter Cheque No" />
             </Form.Item>
           )}
           {paymentType === "TC" && (
             <Form.Item label="TC No" name="tcNo">
-              <Input />
+              <Input placeholder="Enter TC No" />
             </Form.Item>
           )}
           {paymentType === "Account Transfer" && (
             <Form.Item label="Account No" name="accountNo">
-              <Input />
+              <Input placeholder="Enter Account No" />
             </Form.Item>
           )}
           <Form.Item label="Recived-By" name="receivedBy">
-            <Input />
+            <Input placeholder="Enter Recived-By" />
           </Form.Item>
           <Form.Item label="Comment" name="comment">
-            <Input />
+            <Input placeholder="Enter Comment" />
           </Form.Item>
 
           <Form.Item label="Amount" name="amount">
-            <Input type="text" />
+            <Input type="text" placeholder="Enter Amount" />
           </Form.Item>
-          <Form.Item>
-            <Button htmlType="submit">Submit</Button>
+          <Form.Item
+            style={{
+              marginLeft: "180px",
+            }}
+          >
+            <Button type="primary" htmlType="submit">
+              Submit
+            </Button>
           </Form.Item>
         </Form>
       </Card>

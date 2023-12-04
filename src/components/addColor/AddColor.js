@@ -1,8 +1,11 @@
 import React from "react";
 import { Button, Form, Input, Card, Space } from "antd";
-
+import { addColor } from "../../services/restApi/restApis";
 const onFinish = (values) => {
-  console.log("Success:", values);
+  console.log(values);
+  addColor(values)
+    .then((res) => console.log(res))
+    .catch((err) => console.log(err));
 };
 const onFinishFailed = (errorInfo) => {
   console.log("Failed:", errorInfo);
@@ -41,7 +44,7 @@ const AddColor = () => {
           onFinishFailed={onFinishFailed}
           autoComplete="off"
         >
-          <Form.Item label="Color" name="Color">
+          <Form.Item label="Color" name="color">
             <Input type="text" placeholder="Enter Color" />
           </Form.Item>
           <Form.Item

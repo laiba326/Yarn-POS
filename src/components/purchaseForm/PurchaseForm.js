@@ -37,7 +37,6 @@ const purchaseForm = () => {
       >
         <Input placeholder="Enter Product Name" />
       </Form.Item>
-
       <Form.Item label={<CustomLabel>Quantity</CustomLabel>} name="quantity">
         <Input placeholder="Enter Quantity" />
       </Form.Item>
@@ -47,17 +46,16 @@ const purchaseForm = () => {
       <Form.Item label={<CustomLabel>Total</CustomLabel>} name="total">
         <Input placeholder="Enter Total" />
       </Form.Item>
-      <Form
+
+      <Form.Item
         style={{
           marginLeft: "170px",
         }}
       >
-        <Form.Item>
-          <Button type="primary" htmlType="submit">
-            submit
-          </Button>
-        </Form.Item>
-      </Form>
+        <Button type="primary" htmlType="submit">
+          submit
+        </Button>
+      </Form.Item>
     </StyledForm>
   );
 };

@@ -47,17 +47,16 @@ const PartyForm = () => {
       <Form.Item label={<CustomLabel>phone3</CustomLabel>} name="phone3">
         <input placeholder="Enter Phone3" />
       </Form.Item>
-      <Form
+
+      <Form.Item
         style={{
           marginLeft: "100px",
         }}
       >
-        <Form.Item>
-          <Button type="primary" htmlType="submit">
-            submit
-          </Button>
-        </Form.Item>
-      </Form>
+        <Button type="primary" htmlType="submit">
+          submit
+        </Button>
+      </Form.Item>
     </StyledForm>
   );
 };

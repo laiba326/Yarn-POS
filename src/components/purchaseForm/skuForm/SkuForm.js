@@ -19,14 +19,10 @@ const SkuForm = () => {
     console.log(values);
   };
 
-  const onChange = (values) => {
-    console.log(values);
-  };
-
   const selectOptions = [
     { label: "red", value: "red" },
-    { label: "red", value: "red" },
-    { label: "red", value: "red" },
+    { label: "green", value: "green" },
+    { label: "blue", value: "blue" },
   ];
 
   return (
@@ -35,8 +31,7 @@ const SkuForm = () => {
       wrapperCol={{ span: 14 }}
       layout="horizontal"
       style={{ maxWidth: 600 }}
-      onFinish={onChange}
-      // onChange={onChange}
+      onFinish={onFinish}
     >
       <h1>Sku Form</h1>
       <Form.Item label={<CustomLabel>Sku Name</CustomLabel>} name="skuname">

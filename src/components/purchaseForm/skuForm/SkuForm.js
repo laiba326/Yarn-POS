@@ -19,10 +19,6 @@ const SkuForm = () => {
     console.log(values);
   };
 
-  const onChange = (values) => {
-    console.log(values);
-  };
-
   const selectOptions = [
     { label: "red", value: "red" },
     { label: "red", value: "red" },
@@ -35,7 +31,7 @@ const SkuForm = () => {
       wrapperCol={{ span: 14 }}
       layout="horizontal"
       style={{ maxWidth: 600 }}
-      onFinish={onChange}
+      onFinish={onFinish}
       // onChange={onChange}
     >
       <h1>Sku Form</h1>

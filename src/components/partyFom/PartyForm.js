@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, Form, Input } from "antd";
 import styled from "styled-components";
-
+import { addPartyForm } from "../../services/restApi/restApis";
 const StyledForm = styled(Form)`
   max-width: 600px;
   margin: auto;
@@ -14,11 +14,13 @@ const CustomLabel = styled.label`
   color: black;
 `;
 
+const onFinish = (values) => {
+  console.log(values);
+  PartyForm(values)
+    .then((res) => console.log(res))
+    .catch((err) => console.log(err));
+};
 const PartyForm = () => {
-  const onFinish = (values) => {
-    console.log(values);
-  };
-
   return (
     <StyledForm
       labelCol={{ span: 4 }}
@@ -47,17 +49,16 @@ const PartyForm = () => {
       <Form.Item label={<CustomLabel>phone3</CustomLabel>} name="phone3">
         <input placeholder="Enter Phone3" />
       </Form.Item>
-      <Form
+
+      <Form.Item
         style={{
           marginLeft: "100px",
         }}
       >
-        <Form.Item>
-          <Button type="primary" htmlType="submit">
-            submit
-          </Button>
-        </Form.Item>
-      </Form>
+        <Button type="primary" htmlType="submit">
+          submit
+        </Button>
+      </Form.Item>
     </StyledForm>
   );
 };

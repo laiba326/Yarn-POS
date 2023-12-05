@@ -32,7 +32,6 @@ const SkuForm = () => {
       layout="horizontal"
       style={{ maxWidth: 600 }}
       onFinish={onFinish}
-      // onChange={onChange}
     >
       <h1>Sku Form</h1>
       <Form.Item label={<CustomLabel>Sku Name</CustomLabel>} name="skuname">

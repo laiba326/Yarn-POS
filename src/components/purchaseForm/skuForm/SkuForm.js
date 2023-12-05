@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, Form, Input, Select } from "antd";
 import styled from "styled-components";
-
+import { addSku } from "../../../services/restApi/restApis";
 const StyledForm = styled(Form)`
   max-width: 600px;
   margin: auto;
@@ -17,11 +17,17 @@ const CustomLabel = styled.label`
 const SkuForm = () => {
   const onFinish = (values) => {
     console.log(values);
+    addSku(values)
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
   };
 
-  const onChange = (values) => {
-    console.log(values);
-  };
+  // const onChange = (values) => {
+  //   console.log(values);
+  //   SkuForm(values)
+  //     .then((res) => console.log(res))
+  //     .catch((err) => console.log(err));
+  // };
 
   const selectOptions = [
     { label: "red", value: "red" },
@@ -35,7 +41,7 @@ const SkuForm = () => {
       wrapperCol={{ span: 14 }}
       layout="horizontal"
       style={{ maxWidth: 600 }}
-      onFinish={onChange}
+      onFinish={onFinish}
       // onChange={onChange}
     >
       <h1>Sku Form</h1>

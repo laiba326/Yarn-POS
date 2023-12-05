@@ -8,3 +8,11 @@ export const addColor = (color) => {
     data: color,
   });
 };
+
+export const addSku = (sku) => {
+  return axios({
+    method: "post",
+    url: `${URL}sku`,
+    data: sku,
+  });
+};

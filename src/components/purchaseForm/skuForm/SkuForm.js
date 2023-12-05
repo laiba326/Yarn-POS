@@ -45,7 +45,7 @@ const SkuForm = () => {
       // onChange={onChange}
     >
       <h1>Sku Form</h1>
-      <Form.Item label={<CustomLabel>Sku Name</CustomLabel>} name="skuname">
+      <Form.Item label={<CustomLabel>Sku Name</CustomLabel>} name="sku">
         <Input placeholder="Enter Sku Name" />
       </Form.Item>
       <Form.Item label={<CustomLabel>Sku Color</CustomLabel>} name="skucolor">

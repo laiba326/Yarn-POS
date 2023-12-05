@@ -1,16 +1,27 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
 import { Button, DatePicker, Form, Input, Select, Card, Space } from "antd";
 
 const { Option } = Select;
-const onFinish = (values) => {
-  console.log("Success:", values);
-};
-const onFinishFailed = (errorInfo) => {
-  console.log("Failed:", errorInfo);
-};
 
 const Sale = () => {
+  const state = useSelector((state) => state);
+
+  const partyOptions = state.party.parties.map((party) => {
+    return {
+      label: party.partyname,
+      value: party.partyid,
+    };
+  });
+
+  const onFinish = (values) => {
+    console.log("Success:", values);
+  };
+  const onFinishFailed = (errorInfo) => {
+    console.log("Failed:", errorInfo);
+  };
+
   return (
     <Space direction="vertical" size={16}>
       <Card
@@ -47,11 +58,7 @@ const Sale = () => {
             <DatePicker />
           </Form.Item>
           <Form.Item label="Party Name">
-            <Select placeholder="Select Party Name">
-              <Option value="Party 1">Party 1</Option>
-              <Option value="Party 2">Party 2</Option>
-              <Option value="Party 3">Party 3</Option>
-            </Select>
+            <Select placeholder="Select Party Name" options={partyOptions} />
           </Form.Item>
 
           <Form.Item label="SKU">

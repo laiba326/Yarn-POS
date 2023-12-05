@@ -8,14 +8,17 @@ export const addColor = (color) => {
     data: color,
   });
 };
-export const addPartyForm = (PartyForm) => {
+export const addPartyForm = (data) => {
   return axios({
     method: "post",
     url: `${URL}parties`,
-    data: partyname,
-    address,
-    phone1,
-    phone2,
-    phone3,
+    data,
+  });
+};
+
+export const getParties = () => {
+  return axios({
+    method: "get",
+    url: `${URL}parties`,
   });
 };

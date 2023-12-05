@@ -14,13 +14,14 @@ const CustomLabel = styled.label`
   color: black;
 `;
 
-const onFinish = (values) => {
-  console.log(values);
-  PartyForm(values)
-    .then((res) => console.log(res))
-    .catch((err) => console.log(err));
-};
 const PartyForm = () => {
+  const onFinish = (values) => {
+    console.log(values);
+    addPartyForm(values)
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
+  };
+
   return (
     <StyledForm
       labelCol={{ span: 4 }}

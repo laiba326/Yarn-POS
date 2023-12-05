@@ -1,14 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Layout, Space } from "antd";
 import SideMenu from "./components/layout/SideBar";
 import RouteComp from "./router/routeComp";
+import { useDispatch } from "react-redux";
 import {
   footerStyle,
   siderStyle,
   contentStyle,
   headerStyle,
 } from "./components/layout/layoutStyles";
-import sale from "./components/addSale/Sale";
+import { getParties } from "./services/restApi/restApis";
+import { addParties } from "./redux/slice/partySlice";
 
 const { Header, Footer, Sider, Content } = Layout;
 
@@ -36,6 +38,14 @@ const { Header, Footer, Sider, Content } = Layout;
 
 //thermal printing
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    getParties().then((res) => {
+      dispatch(addParties(res.data));
+    });
+  }, []);
+
   return (
     <>
       <div

@@ -14,10 +14,10 @@ const Sale = () => {
       value: party.partyid,
     };
   });
-  const skuOptions = state.party.parties.map((party) => {
+  const skuOptions = state.sku.sku.map((sku) => {
     return {
-      label: party.partyname,
-      value: party.partyid,
+      label: sku.sku,
+      value: sku.skuid,
     };
   });
 

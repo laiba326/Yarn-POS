@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const skuSlice = createSlice({
   name: "sku",
   initialState: {
-    parties: null,
+    sku: null,
   },
   reducers: {
     addSku: (state, action) => {

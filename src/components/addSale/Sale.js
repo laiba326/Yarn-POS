@@ -14,6 +14,12 @@ const Sale = () => {
       value: party.partyid,
     };
   });
+  const skuOptions = state.skuname.map((party) => {
+    return {
+      label: party.skuname,
+      value: party.partyid,
+    };
+  });
 
   const onFinish = (values) => {
     console.log("Success:", values);
@@ -62,11 +68,7 @@ const Sale = () => {
           </Form.Item>
 
           <Form.Item label="SKU">
-            <Select placeholder="Select SKU">
-              <Option value="1"> 1</Option>
-              <Option value="2"> 2</Option>
-              <Option value="3"> 3</Option>
-            </Select>
+            <Select placeholder="Select SKU" options={skuOptions} />
           </Form.Item>
           {/* <Form.Item label="Payment Type" name="paymentType">
             <Select onChange={handlePaymentTypeChange}>

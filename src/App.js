@@ -11,6 +11,8 @@ import {
 } from "./components/layout/layoutStyles";
 import { getParties } from "./services/restApi/restApis";
 import { addParties } from "./redux/slice/partySlice";
+import { addSku } from "./redux/slice/skuSlice";
+import { getSku } from "./services/restApi/restApis";
 
 const { Header, Footer, Sider, Content } = Layout;
 
@@ -43,6 +45,12 @@ function App() {
   useEffect(() => {
     getParties().then((res) => {
       dispatch(addParties(res.data));
+    });
+  }, []);
+
+  useEffect(() => {
+    getSku().then((res) => {
+      dispatch(addSku(res.data));
     });
   }, []);
 

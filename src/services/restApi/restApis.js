@@ -15,10 +15,23 @@ export const addPartyForm = (data) => {
     data,
   });
 };
+export const addSku = (data) => {
+  return axios({
+    method: "post",
+    url: `${URL}sku`,
+    data,
+  });
+};
 
 export const getParties = () => {
   return axios({
     method: "get",
     url: `${URL}parties`,
+  });
+};
+export const getSku = () => {
+  return axios({
+    method: "get",
+    url: `${URL}sku`,
   });
 };

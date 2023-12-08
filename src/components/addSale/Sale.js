@@ -14,9 +14,9 @@ const Sale = () => {
       value: party.partyid,
     };
   });
-  const skuOptions = state.skuname.map((party) => {
+  const skuOptions = state.party.parties.map((party) => {
     return {
-      label: party.skuname,
+      label: party.partyname,
       value: party.partyid,
     };
   });

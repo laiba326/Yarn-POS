@@ -12,10 +12,6 @@ export const addPartyForm = (PartyForm) => {
   return axios({
     method: "post",
     url: `${URL}parties`,
-    data: partyname,
-    address,
-    phone1,
-    phone2,
-    phone3,
+    data: PartyForm,
   });
 };

@@ -16,7 +16,7 @@ const CustomLabel = styled.label`
 
 const onFinish = (values) => {
   console.log(values);
-  PartyForm(values)
+  addPartyForm(values)
     .then((res) => console.log(res))
     .catch((err) => console.log(err));
 };
